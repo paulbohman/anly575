@@ -11,3 +11,10 @@ const TABLES = array(
 	'Assignment' => 'assignments',
 	'Submission' => 'submissions'
 );
+const DB = array(
+	'host' => 'localhost',
+	'db'   => 'anly575take2',
+	'user' => 'webserveruser',
+	'pass' => 'th84#nR$x!jo',
+	'charset' => 'utf8mb4'
+);
