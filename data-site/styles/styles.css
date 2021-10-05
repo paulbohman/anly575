@@ -9,6 +9,11 @@ body {
 #container {
 }
 
+header a,
+nav a {
+	text-decoration: none;
+}
+
 header {
 	width: 100%;
 	background-color: #003349;
@@ -16,8 +21,16 @@ header {
 	color:  #fff;
 }
 
-header a {
+#logo a {
 	color: #fff;
+	background-color: #0567aa;
+	padding: 10px 20px;
+}
+
+#logo a:focus,
+#logo a:hover {
+	background-color: #fff;
+	color: #0567aa;
 }
 
 nav {

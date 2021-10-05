@@ -6,3 +6,8 @@ define("PROTOCOL", 'http://');
 define("DOMAIN", 'localhost/');
 define("SUBFOLDER", 'data-site/');
 define("URL_ROOT", PROTOCOL . DOMAIN . SUBFOLDER);
+const TABLES = array(
+	'User' => 'users',
+	'Assignment' => 'assignments',
+	'Submission' => 'submissions'
+);
