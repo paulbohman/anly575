@@ -88,3 +88,12 @@ footer a {
 	max-width: 1200px;
 	margin: auto;
 }
+
+table {
+	 border-collapse: collapse;
+	 border: 1px solid #1e1e1e;
+}
+
+td,th {
+     padding:5px;
+}

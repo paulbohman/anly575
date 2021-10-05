@@ -6,11 +6,12 @@ class Database {
 	 * Connect to the database
 	 */
 	function pdo() {
-		$host = '127.0.0.1';
-		$db   = 'anly575take2';
-		$user = 'webserveruser';
-		$pass = 'th84#nR$x!jo';
-		$charset = 'utf8mb4';
+		
+		$host = DB['host'];
+		$db = DB['db'];
+		$user = DB['user'];
+		$pass = DB['pass'];
+		$charset = DB['charset'];
 
 		$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 		$options = [
