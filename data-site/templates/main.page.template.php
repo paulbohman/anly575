@@ -4,14 +4,17 @@
  */
 new Base;
 if (!($values->header)) {
-	$values->header = Base::renderExternalFile(TEMPLATE_PATH . 'main.header.template.php');
+	$values->header = TEMPLATE_PATH . 'main.header.template.php';
 }
 if (!($values->nav)) {
-	$values->nav = Base::renderExternalFile(TEMPLATE_PATH . 'main.nav.template.php');
+	$values->nav = TEMPLATE_PATH . 'main.nav.template.php';
 }
 if (!($values->footer)) {
-	$values->footer = Base::renderExternalFile(TEMPLATE_PATH . 'main.footer.template.php');
+	$values->footer = TEMPLATE_PATH . 'main.footer.template.php';
 }
+$page->header = Base::renderExternalFile($values->header);
+$page->nav = Base::renderExternalFile($values->nav);
+$page->footer = Base::renderExternalFile($values->footer);
 
 /** Get URL root
  */
@@ -32,30 +35,30 @@ $hostname = $_SERVER['SERVER_NAME'];
 
 <div id="container">
 
-<header>
-<div class="innerContainer">
-<?php echo $page->header;?>
-</div>
-</header>
+<?php 
+if ($page->header) {
+	echo "<header>\n<div class=\"innerContainer\">\n$page->header</div></header>\n";
+}?>
 
-<nav>
-<div class="innerContainer">
-<?php echo $page->nav;?>
-</div>
-</nav>
+<?php 
+if ($page->nav) {
+	echo "<nav>\n<div class=\"innerContainer\">\n$page->nav</div></nav>\n";
+}?>
 
 <main>
 <div class="innerContainer">
-<h1><?php echo $page->heading;?></h1>
+<?php 
+if ($page->heading) {
+	echo "<h1>$page->heading</h1>\n";
+}?>
 <?php echo $page->content;?>
 </div>
 </main>
 
-<footer>
-<div class="innerContainer">
-<?php echo $page->footer;?>
-</div>
-</footer>
+<?php 
+if ($page->footer) {
+	echo "<footer>\n<div class=\"innerContainer\">\n$page->footer</div></footer>\n";
+}?>
 
 </div>
 
