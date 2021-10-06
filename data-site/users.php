@@ -1,5 +1,4 @@
 <?php
-include 'init/config.php';
 include 'init/init.php';
 
 $values->title = 'Users';

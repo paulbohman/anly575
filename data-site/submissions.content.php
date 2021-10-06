@@ -19,7 +19,8 @@ LEFT JOIN `assignments` AS `a`
 ';
 
 
-$submissions = $db->query($sql);
+$submissions = $db->object('Submission', $sql);
+
 echo '<pre>';
 print_r($submissions);
 echo '</pre>';

@@ -43,14 +43,21 @@ class Database {
 	 * submit a query that returns a particular type of object
 	 */
 	function object($objectType, $query = null) {
+		
 		if (!$query) {
 			if (!$tableName = $this->tableName($objectType)) {
 				echo '<p>Error: unknown table</p>';
 				return false;
 			}
 			$query = "SELECT * FROM `$tableName`";
+		} else {
+			if (!$tableName = $this->tableName($objectType)) {
+				echo '<p>Error: unknown table</p>';
+				return false;
+			}
 		}
 		$pdo = $this->pdo();
+		
 		$data = $pdo->query($query)->fetchAll(PDO::FETCH_CLASS, $objectType);
 		return $data;
 	}
