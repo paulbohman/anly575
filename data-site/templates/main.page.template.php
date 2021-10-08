@@ -1,24 +1,19 @@
 <?php
 /**
- * Define default file paths for the header, nav, footer
+ * Define default file paths for the header, nav, footer,
+ * but allow individual pages to override those file paths, 
+ * so you can include a different header, nav, or footer
+ * on a given page
  */
 new Base;
-if (!($values->header)) {
-	$values->header = TEMPLATE_PATH . 'main.header.template.php';
-}
-if (!($values->nav)) {
-	$values->nav = TEMPLATE_PATH . 'main.nav.template.php';
-}
-if (!($values->footer)) {
-	$values->footer = TEMPLATE_PATH . 'main.footer.template.php';
-}
-$page->header = Base::renderExternalFile($values->header);
-$page->nav = Base::renderExternalFile($values->nav);
-$page->footer = Base::renderExternalFile($values->footer);
 
-/** Get URL root
- */
-$hostname = $_SERVER['SERVER_NAME'];
+$headerPath 	= $values->header ? TEMPLATE_PATH . $values->header : TEMPLATE_PATH . 'main.header.template.php';
+$navPath 		= $values->nav ? TEMPLATE_PATH . $values->nav : TEMPLATE_PATH . 'main.nav.template.php';
+$footerPath 	= $values->footer ? TEMPLATE_PATH . $values->footer : TEMPLATE_PATH . 'main.footer.template.php';
+
+$page->header 	= Base::renderExternalFile($headerPath);
+$page->nav 		= Base::renderExternalFile($navPath);
+$page->footer 	= Base::renderExternalFile($footerPath);
 ?>
 <!DOCTYPE html>
 <html lang="en">

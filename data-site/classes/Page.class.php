@@ -42,6 +42,6 @@ class Page extends Base {
 		}
 
 		$page = $values;
-		include TEMPLATE_PATH . $this->name . '.template.php';
+		include TEMPLATE_PATH . $this->name;
 	}
 }
