@@ -62,12 +62,26 @@ class Database {
 		return $data;
 	}
 
-	/* submit a custom query */
-	function query($query = null) {
+	/* get an array of results (custom query) */
+	function fetchAll($query = null) {
 		$pdo = $this->pdo();
 		$data = $pdo->query($query)->fetchAll(PDO::FETCH_OBJ);
 		return $data;
 	}
 
+	/* completely custom query */
+	function query($query = null) {
+		$pdo = $this->pdo();
+		$affectedRows = $pdo->exec($query);
+		return $affectedRows;
+	}
+
+	/* insert a new row into a table. The function returns the ID of the last inserted row */
+	function insert($query = null) {
+		$pdo = $this->pdo();
+		$affectedRows = $pdo->exec($query);
+		$insertId = $pdo->lastInsertId();
+		return $insertId;
+	}
 
 }
