@@ -1,4 +1,8 @@
 <?php
+
+include('register.content.php');
+/*
+
 $db = new Database();
 
 $postError = "<p>Error: form submission was incomplete.</p>\n";
@@ -42,3 +46,4 @@ $form .= "<p><label for=\"email\">Email</label> <input type=\"text\" name=\"emai
 
 
 echo $formStart . $form . $formEnd;
+*/

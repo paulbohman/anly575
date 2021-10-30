@@ -21,6 +21,10 @@ header {
 	color:  #fff;
 }
 
+#loginWrapper {
+	float: right;
+}
+
 #logo a {
 	color: #fff;
 	background-color: #0567aa;
@@ -106,12 +110,17 @@ td,th {
 
 label {
 	display: block;
+	line-height: 1em;
 }
 
-input[type=text] {
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=date] {
 	border: 1px solid #ccc;
 	font-size: 16px;
 	padding: 6px 12px;
+	display: block;
 }
 
 input[type=submit],
@@ -133,4 +142,24 @@ button {
 .icon-button:hover,
 .icon-button:focus {
 	outline: 1px solid blue;
+}
+
+.formError {
+	display: inline-block;
+	line-height: 1em;
+	margin: 4px 0;
+	position: relative;
+	padding: 4px 8px;
+	border: 1px solid #990000;
+	background-color: #fff3a2;
+}
+
+.formSuccess {
+	display: inline-block;
+	line-height: 1em;
+	margin: 4px 0;
+	position: relative;
+	padding: 4px 8px;
+	border: 1px solid #139936;
+	background-color: #fff3a2;
 }
