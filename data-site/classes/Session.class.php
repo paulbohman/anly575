@@ -24,35 +24,44 @@ class Session extends Base {
 		}
 	}
 
-	function login() {
+	function login($email, $password) {
 		//$_SESSION["loggedIn"] = true;
 		if(isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] === true){
 		    header("location: " . URL_ROOT);
 		    exit;
 		} else {
 			echo 'Note: not logged in yet';
-			return;
+			//return;
 		}
-		if(password_verify($password, $hashedPassword)){
+		$db = new Database();
 
-	        $db = new Database();
+		$sql = 'SELECT * FROM `users` WHERE `email` = ' . $email . ';';
 
-			$sql = 'SELECT * FROM `users` WHERE `id` = ' . $id . ';';
+		if (!$users = $db->object('User')) {
+			echo '<p>Error: Invalid login credentials.</p>';
+			return;
+		} else {
+			$user = $users[0];
+		}
+		if(password_verify($password, $user->password)){
+			echo '<p>Credentials are valid</p>';
+			//die();
 
-			$users = $db->object('User');
+	        
 	        
 	        // Store data in session variables
 	        $_SESSION["loggedIn"] = true;
-	        $_SESSION["id"] = $id;
-	        $_SESSION["firstName"] = $firstName;
-	        $_SESSION["lastName"] = $lastName;
+	        $_SESSION["id"] = $user->id;
+	        $_SESSION["firstName"] = $user->firstname;
+	        $_SESSION["lastName"] = $user->lastname;
 	        $_SESSION["email"] = $email;
 	        
 	        // Redirect user to welcome page
-	        header("location: welcome.php");
-	        } else{
+	        header('location: ' . URL_ROOT . 'index.php');
+        } else {
 	        // Password is not valid, display a generic error message
-	        $login_err = "Invalid username or password.";
+	        echo "Invalid username or password.";
+	        //die();
 	    }
 	}
 

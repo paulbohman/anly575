@@ -3,7 +3,6 @@ $db = new Database();
 
 $session = new Session();
 $loggedIn = $session->checkLoginStatus();
-$loggedIn = true;
 
 $sql = 'SELECT `id` FROM `users`;';
 
@@ -38,6 +37,9 @@ foreach ($users as $user) {
 	$tableData .= "</tr>\n";
 }
 
-$addUser = "<p><a href=\"user-add.php\" class=\"icon-button\"><i class=\"fas fa-plus-circle\"></i> Add user</a></p>";
+$addUser = '';
+if ($loggedIn) {
+	$addUser = "<p><a href=\"user-add.php\" class=\"icon-button\"><i class=\"fas fa-plus-circle\"></i> Add user</a></p>";
+}
 
 echo $tableStart . $tableData . $tableEnd . $addUser;

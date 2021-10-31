@@ -2,8 +2,11 @@
 $emailInvalid = "false";
 $passwordInvalid = "false";
 
-$session = new Session();
-$session->login();
+if ( (isset($_POST['email'])) && (isset($_POST['password'])) ) {
+
+	$session = new Session();
+	$session->login($_POST['email'], $_POST['password']);
+}
 ?>
 
 

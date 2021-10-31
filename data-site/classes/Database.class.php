@@ -46,13 +46,13 @@ class Database {
 		
 		if (!$query) {
 			if (!$tableName = $this->tableName($objectType)) {
-				echo '<p>Error: unknown table</p>';
+				echo '<p>Error: unknown table "' . $tableName . '"</p>';
 				return false;
 			}
 			$query = "SELECT * FROM `$tableName`";
 		} else {
 			if (!$tableName = $this->tableName($objectType)) {
-				echo '<p>Error: unknown table</p>';
+				echo '<p>Error: unknown table "' . $tableName . '"</p>';
 				return false;
 			}
 		}

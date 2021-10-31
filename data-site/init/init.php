@@ -27,4 +27,4 @@ $_SESSION['lastname'] = 'Bohman';
 $_SESSION['email'] = 'pb924@georgetown.edu';
 */
 
-//$session->print();
+$session->print();

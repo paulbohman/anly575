@@ -19,10 +19,16 @@ header {
 	background-color: #003349;
 	padding: 10px 0;
 	color:  #fff;
+	height: 26px;
 }
 
 #loginWrapper {
 	float: right;
+}
+
+#logo {
+	width: 300px;
+	float: left;
 }
 
 #logo a {
@@ -35,6 +41,11 @@ header {
 #logo a:hover {
 	background-color: #fff;
 	color: #0567aa;
+}
+
+#userAccountWrapper {
+	display: inline-block;
+	margin-right: 20px;
 }
 
 nav {
@@ -132,6 +143,34 @@ button {
 	font-size: 16px;
 	display: inline-block;
 	margin-right: 10px;
+}
+
+a.button {
+	background-color: #0567aa;
+	color: #fff;
+	display: inline-block;
+	padding: 2px 20px;
+	margin: 0;
+}
+
+a.button:hover,
+a.button:focus {
+	background-color: #003349;
+}
+
+.smallButton {
+	background-color: #0077c8;
+	padding: 0px 5px;
+	border: 0;
+	color: #fff;
+	font-size: 16px;
+	display: inline-block;
+	margin-right: 10px;
+}
+
+#loginButton {
+	position: relative;
+	top: -2px;
 }
 
 .icon-button {
