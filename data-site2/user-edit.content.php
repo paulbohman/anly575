@@ -31,7 +31,7 @@ if (isset($_POST['id'])) {
 	} else {
 		$postApproved = 0;
 	}
-	$postApprovedOriginalValue = $_POST['approved'];
+	$postApprovedOriginalValue = $postApproved;
 	
 
 	//echo 'post';
