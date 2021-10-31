@@ -35,5 +35,6 @@ define("URL_ROOT", PROTOCOL . DOMAIN . SUBFOLDER);
 define ('TABLES', array(
 	'User' => 'users',
 	'Assignment' => 'assignments',
-	'Submission' => 'submissions'
+	'Submission' => 'submissions',
+	'Course' => 'courses'
 ));

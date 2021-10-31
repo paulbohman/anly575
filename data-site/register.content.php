@@ -30,6 +30,9 @@ if (isset($_POST['lastname'])) {
 if (isset($_POST['email'])) {
 	$valueEmail = $_POST['email'];
 }
+if (isset($_POST['password'])) {
+	$valueEmail = $_POST['password'];
+}
 
 $firstNameError = '';
 $lastNameError = '';
