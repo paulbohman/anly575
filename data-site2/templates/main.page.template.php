@@ -23,6 +23,7 @@ $page->footer 	= Base::renderExternalFile($footerPath);
 	<meta name=viewport content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="<?php echo URL_ROOT; ?>styles/styles.css">
 	<script src="https://kit.fontawesome.com/0169962cb8.js" crossorigin="anonymous"></script>
+	<script src="<?PHP echo URL_ROOT . 'javascript/jquery-3.6.0.min.js'; ?>" type="text/javascript"></script>
 	
 	<?php echo $page->cssFiles;?>
 	<?php echo $page->headStyles;?>
