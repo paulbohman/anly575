@@ -18,6 +18,9 @@ foreach ($courses as $k => $courseObject) {
 	$optionsList[$courseObject->id] = $courseObject->name;
 }
 
+echo '<pre>';
+print_r($optionsList);
+echo '</pre>';
 
 include CLASS_PATH . 'UI.class.php';
 $ui = new UI();
