@@ -6,7 +6,7 @@ if ( (isset($_POST['email'])) && (isset($_POST['password'])) ) {
 
 	$session = new Session();
 	$session->login($_POST['email'], $_POST['password']);
-	print_r($_POST);
+	//print_r($_POST);
 }
 ?>
 
