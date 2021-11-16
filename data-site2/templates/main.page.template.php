@@ -27,6 +27,7 @@ $page->footer 	= Base::renderExternalFile($footerPath);
 	<script src="<?PHP echo URL_ROOT . 'javascript/jquery-3.6.0.min.js'; ?>" type="text/javascript"></script>
 	<script src="<?PHP echo URL_ROOT . 'javascript/deque-patterns.min.js'; ?>" type="text/javascript"></script>
 	
+	
 	<?php echo $page->cssFiles;?>
 	<?php echo $page->headStyles;?>
 </head>
